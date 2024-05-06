@@ -4,6 +4,7 @@ import (
 	"fmt"
 	scrapping "goproject/multi_downloader/go_pkg"
 	"log"
+	"strconv"
 	"strings"
 	"sync"
 
@@ -42,6 +43,8 @@ func main() {
 				log.Fatal(err)
 			}
 
+			fmt.Println(strconv.Itoa(i+1) + "by" + strconv.Itoa(count))
+
 			request <- req
 		}
 
@@ -55,7 +58,5 @@ func main() {
 		if err := resp.Err(); err != nil {
 			log.Fatal()
 		}
-
-		fmt.Println(resp.Filename + " 다운완료\n")
 	}
 }
