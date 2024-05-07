@@ -43,7 +43,7 @@ func main() {
 				log.Fatal(err)
 			}
 
-			fmt.Println(strconv.Itoa(i+1) + "by" + strconv.Itoa(count))
+			fmt.Println(strconv.Itoa(count) + " 파일 중 " + strconv.Itoa(i+1) + "번째 파일 다운로드 중")
 
 			request <- req
 		}
@@ -59,4 +59,6 @@ func main() {
 			log.Fatal()
 		}
 	}
+
+	fmt.Printf("%d 개 파일 다운로드 완료\n", count)
 }
